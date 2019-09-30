@@ -10,6 +10,7 @@ public class RebootReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.i(TAG, "onReceive: ");
-        MainActivity.scheduleJob(context,123);
+        context.startActivity(new Intent(context,MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        //MainActivity.scheduleJobForImageSearch(context,MainActivity.JOB_IMAGE_SEARCH);
     }
 }
